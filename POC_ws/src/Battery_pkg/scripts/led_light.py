@@ -15,7 +15,7 @@ class led:
     def call_back(self,msg):
         rospy.loginfo("Message received")
         rospy.loginfo(msg.battery_percentage)
-        if msg.battery_state:
+        if msg.battery_state == 1:
             rospy.loginfo("Battery on CHARGE!")
         else:
             rospy.loginfo("DISCHARGING!")

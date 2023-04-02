@@ -32,7 +32,7 @@ class battery_status {
         this.battery_state = initObj.battery_state
       }
       else {
-        this.battery_state = false;
+        this.battery_state = 0;
       }
     }
   }
@@ -42,7 +42,7 @@ class battery_status {
     // Serialize message field [battery_percentage]
     bufferOffset = _serializer.int64(obj.battery_percentage, buffer, bufferOffset);
     // Serialize message field [battery_state]
-    bufferOffset = _serializer.bool(obj.battery_state, buffer, bufferOffset);
+    bufferOffset = _serializer.int64(obj.battery_state, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -53,12 +53,12 @@ class battery_status {
     // Deserialize message field [battery_percentage]
     data.battery_percentage = _deserializer.int64(buffer, bufferOffset);
     // Deserialize message field [battery_state]
-    data.battery_state = _deserializer.bool(buffer, bufferOffset);
+    data.battery_state = _deserializer.int64(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 9;
+    return 16;
   }
 
   static datatype() {
@@ -68,14 +68,14 @@ class battery_status {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'aec281f2bc2cfee4c78cb3a281a275a9';
+    return '957b95659cace2f80a6937514c22929b';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     int64 battery_percentage
-    bool battery_state
+    int64 battery_state
     
     `;
   }
@@ -97,7 +97,7 @@ class battery_status {
       resolved.battery_state = msg.battery_state;
     }
     else {
-      resolved.battery_state = false
+      resolved.battery_state = 0
     }
 
     return resolved;

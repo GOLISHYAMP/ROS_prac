@@ -401,6 +401,12 @@ _gtest_INCLUDES:FILEPATH=/usr/include/gtest/gtest.h
 _gtest_SOURCES:FILEPATH=/usr/src/gtest/src/gtest.cc
 
 //Value Computed by CMake
+battery_launch_BINARY_DIR:STATIC=/home/shyam/ROS_practice/POC_ws/build/battery_launch
+
+//Value Computed by CMake
+battery_launch_SOURCE_DIR:STATIC=/home/shyam/ROS_practice/POC_ws/src/battery_launch
+
+//Value Computed by CMake
 battery_msgs_BINARY_DIR:STATIC=/home/shyam/ROS_practice/POC_ws/build/battery_msgs
 
 //The directory containing a CMake configuration file for battery_msgs.
@@ -663,7 +669,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

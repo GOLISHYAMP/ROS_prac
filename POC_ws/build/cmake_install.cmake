@@ -131,6 +131,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/shyam/ROS_practice/POC_ws/build/gtest/cmake_install.cmake")
+  include("/home/shyam/ROS_practice/POC_ws/build/battery_launch/cmake_install.cmake")
   include("/home/shyam/ROS_practice/POC_ws/build/battery_msgs/cmake_install.cmake")
   include("/home/shyam/ROS_practice/POC_ws/build/Battery_pkg/cmake_install.cmake")
 

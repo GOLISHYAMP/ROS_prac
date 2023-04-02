@@ -1,2 +1,2 @@
 int64 battery_percentage
-bool battery_state
+int64 battery_state

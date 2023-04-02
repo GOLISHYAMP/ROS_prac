@@ -1,0 +1,8 @@
+<launch>
+	<param name = "/bat_per" type = "int" value = "0" />
+	<param name = "/button_on_off" type = "int" value = "0" />
+	<node name = "battery" pkg = "Battery_pkg" type = "battery.py" />
+	<node name = "led_light" pkg = "Battery_pkg" type = "led_light.py" />	
+
+
+</launch>

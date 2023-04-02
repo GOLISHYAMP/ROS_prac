@@ -8,14 +8,14 @@ import struct
 
 
 class battery_status(genpy.Message):
-  _md5sum = "aec281f2bc2cfee4c78cb3a281a275a9"
+  _md5sum = "957b95659cace2f80a6937514c22929b"
   _type = "battery_msgs/battery_status"
   _has_header = False  # flag to mark the presence of a Header object
   _full_text = """int64 battery_percentage
-bool battery_state
+int64 battery_state
 """
   __slots__ = ['battery_percentage','battery_state']
-  _slot_types = ['int64','bool']
+  _slot_types = ['int64','int64']
 
   def __init__(self, *args, **kwds):
     """
@@ -37,10 +37,10 @@ bool battery_state
       if self.battery_percentage is None:
         self.battery_percentage = 0
       if self.battery_state is None:
-        self.battery_state = False
+        self.battery_state = 0
     else:
       self.battery_percentage = 0
-      self.battery_state = False
+      self.battery_state = 0
 
   def _get_types(self):
     """
@@ -55,7 +55,7 @@ bool battery_state
     """
     try:
       _x = self
-      buff.write(_get_struct_qB().pack(_x.battery_percentage, _x.battery_state))
+      buff.write(_get_struct_2q().pack(_x.battery_percentage, _x.battery_state))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -70,9 +70,8 @@ bool battery_state
       end = 0
       _x = self
       start = end
-      end += 9
-      (_x.battery_percentage, _x.battery_state,) = _get_struct_qB().unpack(str[start:end])
-      self.battery_state = bool(self.battery_state)
+      end += 16
+      (_x.battery_percentage, _x.battery_state,) = _get_struct_2q().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -86,7 +85,7 @@ bool battery_state
     """
     try:
       _x = self
-      buff.write(_get_struct_qB().pack(_x.battery_percentage, _x.battery_state))
+      buff.write(_get_struct_2q().pack(_x.battery_percentage, _x.battery_state))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -102,9 +101,8 @@ bool battery_state
       end = 0
       _x = self
       start = end
-      end += 9
-      (_x.battery_percentage, _x.battery_state,) = _get_struct_qB().unpack(str[start:end])
-      self.battery_state = bool(self.battery_state)
+      end += 16
+      (_x.battery_percentage, _x.battery_state,) = _get_struct_2q().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -113,9 +111,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_qB = None
-def _get_struct_qB():
-    global _struct_qB
-    if _struct_qB is None:
-        _struct_qB = struct.Struct("<qB")
-    return _struct_qB
+_struct_2q = None
+def _get_struct_2q():
+    global _struct_2q
+    if _struct_2q is None:
+        _struct_2q = struct.Struct("<2q")
+    return _struct_2q

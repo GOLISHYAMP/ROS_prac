@@ -15,8 +15,8 @@
    (battery_state
     :reader battery_state
     :initarg :battery_state
-    :type cl:boolean
-    :initform cl:nil))
+    :type cl:integer
+    :initform 0))
 )
 
 (cl:defclass battery_status (<battery_status>)
@@ -48,7 +48,16 @@
     (cl:write-byte (cl:ldb (cl:byte 8 48) unsigned) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 56) unsigned) ostream)
     )
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'battery_state) 1 0)) ostream)
+  (cl:let* ((signed (cl:slot-value msg 'battery_state)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 18446744073709551616) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 32) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 40) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 48) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 56) unsigned) ostream)
+    )
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <battery_status>) istream)
   "Deserializes a message object of type '<battery_status>"
@@ -62,7 +71,16 @@
       (cl:setf (cl:ldb (cl:byte 8 48) unsigned) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 56) unsigned) (cl:read-byte istream))
       (cl:setf (cl:slot-value msg 'battery_percentage) (cl:if (cl:< unsigned 9223372036854775808) unsigned (cl:- unsigned 18446744073709551616))))
-    (cl:setf (cl:slot-value msg 'battery_state) (cl:not (cl:zerop (cl:read-byte istream))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 32) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 40) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 48) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 56) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'battery_state) (cl:if (cl:< unsigned 9223372036854775808) unsigned (cl:- unsigned 18446744073709551616))))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<battery_status>)))
@@ -73,20 +91,20 @@
   "battery_msgs/battery_status")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<battery_status>)))
   "Returns md5sum for a message object of type '<battery_status>"
-  "aec281f2bc2cfee4c78cb3a281a275a9")
+  "957b95659cace2f80a6937514c22929b")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'battery_status)))
   "Returns md5sum for a message object of type 'battery_status"
-  "aec281f2bc2cfee4c78cb3a281a275a9")
+  "957b95659cace2f80a6937514c22929b")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<battery_status>)))
   "Returns full string definition for message of type '<battery_status>"
-  (cl:format cl:nil "int64 battery_percentage~%bool battery_state~%~%~%"))
+  (cl:format cl:nil "int64 battery_percentage~%int64 battery_state~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'battery_status)))
   "Returns full string definition for message of type 'battery_status"
-  (cl:format cl:nil "int64 battery_percentage~%bool battery_state~%~%~%"))
+  (cl:format cl:nil "int64 battery_percentage~%int64 battery_state~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <battery_status>))
   (cl:+ 0
      8
-     1
+     8
 ))
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <battery_status>))
   "Converts a ROS message object to a list"

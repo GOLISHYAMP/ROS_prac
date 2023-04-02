@@ -24,16 +24,16 @@ struct buttonResponse_
   typedef buttonResponse_<ContainerAllocator> Type;
 
   buttonResponse_()
-    : power(false)  {
+    : power(0)  {
     }
   buttonResponse_(const ContainerAllocator& _alloc)
-    : power(false)  {
+    : power(0)  {
   (void)_alloc;
     }
 
 
 
-   typedef uint8_t _power_type;
+   typedef int64_t _power_type;
   _power_type power;
 
 
@@ -122,12 +122,12 @@ struct MD5Sum< ::battery_msgs::buttonResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "d1b2ea3f5a3f173007e2e47568b40871";
+    return "c99d52463144470019284766865250e0";
   }
 
   static const char* value(const ::battery_msgs::buttonResponse_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xd1b2ea3f5a3f1730ULL;
-  static const uint64_t static_value2 = 0x07e2e47568b40871ULL;
+  static const uint64_t static_value1 = 0xc99d524631444700ULL;
+  static const uint64_t static_value2 = 0x19284766865250e0ULL;
 };
 
 template<class ContainerAllocator>
@@ -146,7 +146,7 @@ struct Definition< ::battery_msgs::buttonResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "bool power\n"
+    return "int64 power\n"
 "\n"
 ;
   }
@@ -186,7 +186,7 @@ struct Printer< ::battery_msgs::buttonResponse_<ContainerAllocator> >
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::battery_msgs::buttonResponse_<ContainerAllocator>& v)
   {
     s << indent << "power: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.power);
+    Printer<int64_t>::stream(s, indent + "  ", v.power);
   }
 };
 

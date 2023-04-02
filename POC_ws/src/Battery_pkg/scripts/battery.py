@@ -18,10 +18,10 @@ class battery_start:
 
     
     def power(self,req):
-        if req.on:
-            return False
+        if req.on == 1:
+            return 0
         else:
-            return True
+            return 1
 
     def pub_func(self,pub):
        rate = rospy.Rate(1)
@@ -29,7 +29,7 @@ class battery_start:
        while not rospy.is_shutdown():
             msg = battery_status()
             msg.battery_state = rospy.get_param("/button_on_off")
-            if msg.battery_state:
+            if msg.battery_state == 1:
                 if rospy.get_param("/bat_per") < 100:
                     msg.battery_percentage = rospy.get_param("/bat_per") + 10
                 else:
@@ -52,7 +52,7 @@ if __name__ == "__main__":
     rospy.init_node("battery")
     rospy.loginfo("Battery node has been initiated")
     rospy.set_param("/bat_per",0)
-    rospy.set_param("/button_on_off",False)
+    rospy.set_param("/button_on_off",0)
     battery_start()
     rospy.loginfo("Battery node is stopped")
     #rospy.spin()

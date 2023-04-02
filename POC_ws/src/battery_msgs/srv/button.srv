@@ -1,3 +1,3 @@
-bool on
+int64 on
 ---
-bool power
+int64 power

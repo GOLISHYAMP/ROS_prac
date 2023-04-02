@@ -40,7 +40,7 @@ template<>
 struct MD5Sum< ::battery_msgs::button > {
   static const char* value()
   {
-    return "79e55607a903785e95704d7cf4e48e16";
+    return "d768bdedadf64cabd792cf13b0c9dcc6";
   }
 
   static const char* value(const ::battery_msgs::button&) { return value(); }

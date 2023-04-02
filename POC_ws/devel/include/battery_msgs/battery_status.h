@@ -25,11 +25,11 @@ struct battery_status_
 
   battery_status_()
     : battery_percentage(0)
-    , battery_state(false)  {
+    , battery_state(0)  {
     }
   battery_status_(const ContainerAllocator& _alloc)
     : battery_percentage(0)
-    , battery_state(false)  {
+    , battery_state(0)  {
   (void)_alloc;
     }
 
@@ -38,7 +38,7 @@ struct battery_status_
    typedef int64_t _battery_percentage_type;
   _battery_percentage_type battery_percentage;
 
-   typedef uint8_t _battery_state_type;
+   typedef int64_t _battery_state_type;
   _battery_state_type battery_state;
 
 
@@ -128,12 +128,12 @@ struct MD5Sum< ::battery_msgs::battery_status_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "aec281f2bc2cfee4c78cb3a281a275a9";
+    return "957b95659cace2f80a6937514c22929b";
   }
 
   static const char* value(const ::battery_msgs::battery_status_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xaec281f2bc2cfee4ULL;
-  static const uint64_t static_value2 = 0xc78cb3a281a275a9ULL;
+  static const uint64_t static_value1 = 0x957b95659cace2f8ULL;
+  static const uint64_t static_value2 = 0x0a6937514c22929bULL;
 };
 
 template<class ContainerAllocator>
@@ -153,7 +153,7 @@ struct Definition< ::battery_msgs::battery_status_<ContainerAllocator> >
   static const char* value()
   {
     return "int64 battery_percentage\n"
-"bool battery_state\n"
+"int64 battery_state\n"
 ;
   }
 
@@ -195,7 +195,7 @@ struct Printer< ::battery_msgs::battery_status_<ContainerAllocator> >
     s << indent << "battery_percentage: ";
     Printer<int64_t>::stream(s, indent + "  ", v.battery_percentage);
     s << indent << "battery_state: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.battery_state);
+    Printer<int64_t>::stream(s, indent + "  ", v.battery_state);
   }
 };
 

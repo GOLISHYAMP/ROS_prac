@@ -28,7 +28,7 @@ class buttonRequest {
         this.on = initObj.on
       }
       else {
-        this.on = false;
+        this.on = 0;
       }
     }
   }
@@ -36,7 +36,7 @@ class buttonRequest {
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type buttonRequest
     // Serialize message field [on]
-    bufferOffset = _serializer.bool(obj.on, buffer, bufferOffset);
+    bufferOffset = _serializer.int64(obj.on, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -45,12 +45,12 @@ class buttonRequest {
     let len;
     let data = new buttonRequest(null);
     // Deserialize message field [on]
-    data.on = _deserializer.bool(buffer, bufferOffset);
+    data.on = _deserializer.int64(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 1;
+    return 8;
   }
 
   static datatype() {
@@ -60,13 +60,13 @@ class buttonRequest {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '74983d2ffe4877de8ae30b7a94625c41';
+    return 'b526c44c241904733faa3b670847c982';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    bool on
+    int64 on
     
     `;
   }
@@ -81,7 +81,7 @@ class buttonRequest {
       resolved.on = msg.on;
     }
     else {
-      resolved.on = false
+      resolved.on = 0
     }
 
     return resolved;
@@ -99,7 +99,7 @@ class buttonResponse {
         this.power = initObj.power
       }
       else {
-        this.power = false;
+        this.power = 0;
       }
     }
   }
@@ -107,7 +107,7 @@ class buttonResponse {
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type buttonResponse
     // Serialize message field [power]
-    bufferOffset = _serializer.bool(obj.power, buffer, bufferOffset);
+    bufferOffset = _serializer.int64(obj.power, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -116,12 +116,12 @@ class buttonResponse {
     let len;
     let data = new buttonResponse(null);
     // Deserialize message field [power]
-    data.power = _deserializer.bool(buffer, bufferOffset);
+    data.power = _deserializer.int64(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 1;
+    return 8;
   }
 
   static datatype() {
@@ -131,13 +131,13 @@ class buttonResponse {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'd1b2ea3f5a3f173007e2e47568b40871';
+    return 'c99d52463144470019284766865250e0';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    bool power
+    int64 power
     
     
     `;
@@ -153,7 +153,7 @@ class buttonResponse {
       resolved.power = msg.power;
     }
     else {
-      resolved.power = false
+      resolved.power = 0
     }
 
     return resolved;
@@ -163,6 +163,6 @@ class buttonResponse {
 module.exports = {
   Request: buttonRequest,
   Response: buttonResponse,
-  md5sum() { return '79e55607a903785e95704d7cf4e48e16'; },
+  md5sum() { return 'd768bdedadf64cabd792cf13b0c9dcc6'; },
   datatype() { return 'battery_msgs/button'; }
 };
