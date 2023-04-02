@@ -1,0 +1,8 @@
+prefix=/home/shyam/my_ws/install
+
+Name: pkg_msg
+Description: Description of pkg_msg
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy std_msgs message_runtime
