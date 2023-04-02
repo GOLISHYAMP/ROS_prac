@@ -1,0 +1,15 @@
+(cl:defpackage battery_msgs-srv
+  (:use )
+  (:export
+   "BUTTON"
+   "<BUTTON-REQUEST>"
+   "BUTTON-REQUEST"
+   "<BUTTON-RESPONSE>"
+   "BUTTON-RESPONSE"
+   "COMPUTE_BATTERY"
+   "<COMPUTE_BATTERY-REQUEST>"
+   "COMPUTE_BATTERY-REQUEST"
+   "<COMPUTE_BATTERY-RESPONSE>"
+   "COMPUTE_BATTERY-RESPONSE"
+  ))
+

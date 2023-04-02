@@ -1,0 +1,8 @@
+prefix=/home/shyam/ROS_practice/POC_ws/install
+
+Name: Battery_pkg
+Description: Description of Battery_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

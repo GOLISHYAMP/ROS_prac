@@ -1,0 +1,2 @@
+Battery_pkg:battery_msgs
+-DCATKIN_DEVEL_PREFIX=/home/shyam/ROS_practice/POC_ws/devel -DCMAKE_INSTALL_PREFIX=/home/shyam/ROS_practice/POC_ws/install -G Unix Makefiles

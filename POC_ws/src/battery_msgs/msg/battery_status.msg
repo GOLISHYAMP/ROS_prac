@@ -1,0 +1,2 @@
+int64 battery_percentage
+bool battery_state
