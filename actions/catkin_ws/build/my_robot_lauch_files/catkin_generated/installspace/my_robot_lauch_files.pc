@@ -1,0 +1,8 @@
+prefix=/home/shyam/ROS_practice/actions/catkin_ws/install
+
+Name: my_robot_lauch_files
+Description: Description of my_robot_lauch_files
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,2 +1,2 @@
-my_robot_msgs:my_robot_tutorials
+my_robot_lauch_files:my_robot_msgs:my_robot_tutorials
 -DCATKIN_DEVEL_PREFIX=/home/shyam/ROS_practice/actions/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/shyam/ROS_practice/actions/catkin_ws/install -G Unix Makefiles
