@@ -1,2 +1,2 @@
-my_robot_recollect
+my_robot_msgs:my_robot_recollect
 -DCATKIN_DEVEL_PREFIX=/home/shyam/ROS_practice/all_practice/devel -DCMAKE_INSTALL_PREFIX=/home/shyam/ROS_practice/all_practice/install -G Unix Makefiles
