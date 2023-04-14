@@ -1,0 +1,8 @@
+prefix=/home/shyam/ROS_practice/all_practice/devel
+
+Name: my_robot_recollect
+Description: Description of my_robot_recollect
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
