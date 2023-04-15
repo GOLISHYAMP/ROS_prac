@@ -1,0 +1,9 @@
+#goal
+float64 wait_duration
+int64 signal_number
+---
+#result
+int64 waited_duration
+---
+#feedback
+float64 percentage
