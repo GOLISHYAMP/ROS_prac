@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = "/home/shyam/ROS_practice/all_practice/src/my_robot_msgs/msg/signal.msg"
-services_str = ""
+services_str = "/home/shyam/ROS_practice/all_practice/src/my_robot_msgs/srv/sig.srv"
 pkg_name = "my_robot_msgs"
 dependencies_str = "std_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

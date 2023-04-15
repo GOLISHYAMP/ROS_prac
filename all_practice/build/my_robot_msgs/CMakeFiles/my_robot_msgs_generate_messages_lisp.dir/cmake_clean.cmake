@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "/home/shyam/ROS_practice/all_practice/devel/share/common-lisp/ros/my_robot_msgs/msg/signal.lisp"
+  "/home/shyam/ROS_practice/all_practice/devel/share/common-lisp/ros/my_robot_msgs/srv/sig.lisp"
   "CMakeFiles/my_robot_msgs_generate_messages_lisp"
 )
 

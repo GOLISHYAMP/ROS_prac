@@ -558,6 +558,19 @@ my_robot_msgs_gencpp/fast:
 .PHONY : my_robot_msgs_gencpp/fast
 
 #=============================================================================
+# Target rules for targets named _my_robot_msgs_generate_messages_check_deps_sig
+
+# Build rule for target.
+_my_robot_msgs_generate_messages_check_deps_sig: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _my_robot_msgs_generate_messages_check_deps_sig
+.PHONY : _my_robot_msgs_generate_messages_check_deps_sig
+
+# fast build rule for target.
+_my_robot_msgs_generate_messages_check_deps_sig/fast:
+	$(MAKE) -f my_robot_msgs/CMakeFiles/_my_robot_msgs_generate_messages_check_deps_sig.dir/build.make my_robot_msgs/CMakeFiles/_my_robot_msgs_generate_messages_check_deps_sig.dir/build
+.PHONY : _my_robot_msgs_generate_messages_check_deps_sig/fast
+
+#=============================================================================
 # Target rules for targets named my_robot_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -678,6 +691,7 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... my_robot_msgs_gencpp"
+	@echo "... _my_robot_msgs_generate_messages_check_deps_sig"
 	@echo "... my_robot_msgs_generate_messages_cpp"
 	@echo "... my_robot_msgs_generate_messages_eus"
 	@echo "... my_robot_msgs_generate_messages_lisp"

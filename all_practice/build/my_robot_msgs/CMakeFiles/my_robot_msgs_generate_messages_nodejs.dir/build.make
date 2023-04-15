@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/shyam/ROS_practice/all_practice/build
 include my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_nodejs.dir/progress.make
 
 my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_nodejs: /home/shyam/ROS_practice/all_practice/devel/share/gennodejs/ros/my_robot_msgs/msg/signal.js
+my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_nodejs: /home/shyam/ROS_practice/all_practice/devel/share/gennodejs/ros/my_robot_msgs/srv/sig.js
 
 
 /home/shyam/ROS_practice/all_practice/devel/share/gennodejs/ros/my_robot_msgs/msg/signal.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
@@ -61,8 +62,14 @@ my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_nodejs: /home/shyam/ROS
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/shyam/ROS_practice/all_practice/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from my_robot_msgs/signal.msg"
 	cd /home/shyam/ROS_practice/all_practice/build/my_robot_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/shyam/ROS_practice/all_practice/src/my_robot_msgs/msg/signal.msg -Imy_robot_msgs:/home/shyam/ROS_practice/all_practice/src/my_robot_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p my_robot_msgs -o /home/shyam/ROS_practice/all_practice/devel/share/gennodejs/ros/my_robot_msgs/msg
 
+/home/shyam/ROS_practice/all_practice/devel/share/gennodejs/ros/my_robot_msgs/srv/sig.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/shyam/ROS_practice/all_practice/devel/share/gennodejs/ros/my_robot_msgs/srv/sig.js: /home/shyam/ROS_practice/all_practice/src/my_robot_msgs/srv/sig.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/shyam/ROS_practice/all_practice/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from my_robot_msgs/sig.srv"
+	cd /home/shyam/ROS_practice/all_practice/build/my_robot_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/shyam/ROS_practice/all_practice/src/my_robot_msgs/srv/sig.srv -Imy_robot_msgs:/home/shyam/ROS_practice/all_practice/src/my_robot_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p my_robot_msgs -o /home/shyam/ROS_practice/all_practice/devel/share/gennodejs/ros/my_robot_msgs/srv
+
 my_robot_msgs_generate_messages_nodejs: my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_nodejs
 my_robot_msgs_generate_messages_nodejs: /home/shyam/ROS_practice/all_practice/devel/share/gennodejs/ros/my_robot_msgs/msg/signal.js
+my_robot_msgs_generate_messages_nodejs: /home/shyam/ROS_practice/all_practice/devel/share/gennodejs/ros/my_robot_msgs/srv/sig.js
 my_robot_msgs_generate_messages_nodejs: my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_nodejs.dir/build.make
 
 .PHONY : my_robot_msgs_generate_messages_nodejs

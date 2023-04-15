@@ -90,6 +90,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -123,17 +134,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -483,6 +483,21 @@ my_robot_msgs_gencpp/fast:
 .PHONY : my_robot_msgs_gencpp/fast
 
 # Convenience name for target.
+my_robot_msgs/CMakeFiles/_my_robot_msgs_generate_messages_check_deps_sig.dir/rule:
+	cd /home/shyam/ROS_practice/all_practice/build && $(MAKE) -f CMakeFiles/Makefile2 my_robot_msgs/CMakeFiles/_my_robot_msgs_generate_messages_check_deps_sig.dir/rule
+.PHONY : my_robot_msgs/CMakeFiles/_my_robot_msgs_generate_messages_check_deps_sig.dir/rule
+
+# Convenience name for target.
+_my_robot_msgs_generate_messages_check_deps_sig: my_robot_msgs/CMakeFiles/_my_robot_msgs_generate_messages_check_deps_sig.dir/rule
+
+.PHONY : _my_robot_msgs_generate_messages_check_deps_sig
+
+# fast build rule for target.
+_my_robot_msgs_generate_messages_check_deps_sig/fast:
+	cd /home/shyam/ROS_practice/all_practice/build && $(MAKE) -f my_robot_msgs/CMakeFiles/_my_robot_msgs_generate_messages_check_deps_sig.dir/build.make my_robot_msgs/CMakeFiles/_my_robot_msgs_generate_messages_check_deps_sig.dir/build
+.PHONY : _my_robot_msgs_generate_messages_check_deps_sig/fast
+
+# Convenience name for target.
 my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_cpp.dir/rule:
 	cd /home/shyam/ROS_practice/all_practice/build && $(MAKE) -f CMakeFiles/Makefile2 my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_cpp.dir/rule
 .PHONY : my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_cpp.dir/rule
@@ -581,6 +596,7 @@ help:
 	@echo "... install/strip"
 	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... edit_cache"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... my_robot_msgs_gennodejs"
@@ -604,6 +620,7 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... my_robot_msgs_gencpp"
+	@echo "... _my_robot_msgs_generate_messages_check_deps_sig"
 	@echo "... my_robot_msgs_generate_messages_cpp"
 	@echo "... my_robot_msgs_generate_messages_eus"
 	@echo "... my_robot_msgs_generate_messages_lisp"
@@ -611,7 +628,6 @@ help:
 	@echo "... my_robot_msgs_genpy"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... test"
-	@echo "... edit_cache"
 .PHONY : help
 
 
