@@ -15,7 +15,7 @@ class CountUntilClient:
         
     def send_goal_and_get_result(self):
         goal = CountUntilGoal(max_number = 10, wait_duration = 0.5)
-        self._ac.send_goal(goal,done_cb = self.done_callback)
+        self._ac.send_goal(goal,done_cb = self.done_callback, feedback_cb = self.feedback_callback)
         rospy.loginfo("Goal has been sent")
         #self._ac.wait_for_result()
         #rospy.loginfo(self._ac.get_result())
@@ -27,6 +27,9 @@ class CountUntilClient:
     def done_callback(self, status, result):
         rospy.loginfo("status is : "+str(status))
         rospy.loginfo("Result is : "+str(result))
+
+    def feedback_callback(self,feedback):
+        rospy.loginfo(feedback)
 
 if __name__ == '__main__':
     rospy.init_node("count_until_client")
