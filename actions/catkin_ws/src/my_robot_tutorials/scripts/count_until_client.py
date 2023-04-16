@@ -24,6 +24,9 @@ class CountUntilClient:
             print(count)
             count += 1
 
+        rospy.sleep(2)
+        self._ac.cancel_goal()
+
     def done_callback(self, status, result):
         rospy.loginfo("status is : "+str(status))
         rospy.loginfo("Result is : "+str(result))

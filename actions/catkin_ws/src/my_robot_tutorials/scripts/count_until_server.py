@@ -27,8 +27,12 @@ class CountUntilServer:
         rate = rospy.Rate(1.0/wait_duration)
         ### Excution part
         success = False
+        preempted = False
         while not rospy.is_shutdown():
             self._counter += 1
+            if self._as.is_preempt_requested():
+                preempted = True
+                break
             if self._counter > 9:
                 break
             if self._counter >= max_number:
@@ -44,7 +48,10 @@ class CountUntilServer:
         result = CountUntilResult()
         result.count = self._counter
         rospy.loginfo("sent result to client from server")
-        if success:
+        if preempted:
+            rospy.loginfo("Preempted")
+            self._as.set_preempted(result)
+        elif success:
             rospy.loginfo("SUCCESS")
             self._as.set_succeeded(result)    # AS WE DIRECTLY DO NOT SEND THE RESULT
         else:
