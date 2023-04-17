@@ -81,3 +81,10 @@
 /home/shyam/ROS_practice/ROSActions_Activity/build/my_robot_msgs/CMakeFiles/_my_robot_msgs_generate_messages_check_deps_moveGoal.dir
 /home/shyam/ROS_practice/ROSActions_Activity/build/my_robot_msgs/CMakeFiles/my_robot_msgs_gennodejs.dir
 /home/shyam/ROS_practice/ROSActions_Activity/build/my_robot_msgs/CMakeFiles/_my_robot_msgs_generate_messages_check_deps_moveResult.dir
+/home/shyam/ROS_practice/ROSActions_Activity/build/my_robot_tutorials/CMakeFiles/install/strip.dir
+/home/shyam/ROS_practice/ROSActions_Activity/build/my_robot_tutorials/CMakeFiles/install/local.dir
+/home/shyam/ROS_practice/ROSActions_Activity/build/my_robot_tutorials/CMakeFiles/install.dir
+/home/shyam/ROS_practice/ROSActions_Activity/build/my_robot_tutorials/CMakeFiles/list_install_components.dir
+/home/shyam/ROS_practice/ROSActions_Activity/build/my_robot_tutorials/CMakeFiles/rebuild_cache.dir
+/home/shyam/ROS_practice/ROSActions_Activity/build/my_robot_tutorials/CMakeFiles/edit_cache.dir
+/home/shyam/ROS_practice/ROSActions_Activity/build/my_robot_tutorials/CMakeFiles/test.dir

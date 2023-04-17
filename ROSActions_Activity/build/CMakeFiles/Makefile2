@@ -55,12 +55,14 @@ CMAKE_BINARY_DIR = /home/shyam/ROS_practice/ROSActions_Activity/build
 # The main recursive "all" target.
 all: gtest/all
 all: my_robot_msgs/all
+all: my_robot_tutorials/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: gtest/preinstall
 preinstall: my_robot_msgs/preinstall
+preinstall: my_robot_tutorials/preinstall
 
 .PHONY : preinstall
 
@@ -72,6 +74,7 @@ clean: CMakeFiles/tests.dir/clean
 clean: CMakeFiles/download_extra_data.dir/clean
 clean: gtest/clean
 clean: my_robot_msgs/clean
+clean: my_robot_tutorials/clean
 
 .PHONY : clean
 
@@ -187,6 +190,24 @@ my_robot_msgs/clean: my_robot_msgs/CMakeFiles/my_robot_msgs_gennodejs.dir/clean
 my_robot_msgs/clean: my_robot_msgs/CMakeFiles/_my_robot_msgs_generate_messages_check_deps_moveResult.dir/clean
 
 .PHONY : my_robot_msgs/clean
+
+#=============================================================================
+# Directory level rules for directory my_robot_tutorials
+
+# Recursive "all" directory target.
+my_robot_tutorials/all:
+
+.PHONY : my_robot_tutorials/all
+
+# Recursive "preinstall" directory target.
+my_robot_tutorials/preinstall:
+
+.PHONY : my_robot_tutorials/preinstall
+
+# Recursive "clean" directory target.
+my_robot_tutorials/clean:
+
+.PHONY : my_robot_tutorials/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/doxygen.dir
