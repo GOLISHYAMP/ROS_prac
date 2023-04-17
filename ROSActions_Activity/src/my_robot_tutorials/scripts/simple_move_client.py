@@ -20,14 +20,15 @@ class simple_move_client():
 
     def done_callback(self,status,result):
         rospy.loginfo("Status is : "+str(status))
-        rospy.loginfo("Result is : "+str(result))
+        rospy.loginfo("Result message is : "+str(result.message))
+        rospy.loginfo("position is : "+str(result.position))
 
     def feedback_callback(self,feedback):
-        rospy.loginfo("Feedback message is : "+str(feedback.message))
-        rospy.loginfo("Current position is : "+str(feedback.position))
+        rospy.loginfo("Current position is : "+str(feedback.current_position))
 
 if __name__ == "__main__":
     rospy.init_node("simple_move_client")
     rospy.loginfo("Simple move client has been started")
     smc = simple_move_client()
-    smc
+    smc.send_goal_and_get_results()
+    rospy.spin()

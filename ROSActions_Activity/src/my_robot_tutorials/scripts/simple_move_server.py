@@ -19,28 +19,26 @@ class simple_move_server():
         rospy.loginfo("Goal has been received")
         self.position = goal.position
         self.velocity = goal.velocity
-        rate = rospy.Rate(1/self.velocity)
+        rate = rospy.Rate(self.velocity)
         feedback = moveFeedback()
         if self.position < self.current_position:
             while self.position < self.current_position:
                 self.current_position -= 1
-                feedback.message = "moving to left"
-                feedback.position = self.current_position
+                feedback.current_position = self.current_position
                 self._as.publish_feedback(feedback)
                 rate.sleep()
         elif self.position > self.current_position:
             while self.position > self.current_position:
                 self.current_position += 1
-                feedback.message = "moving to Right"
-                feedback.position = self.current_position
+                feedback.current_position = self.current_position
                 self._as.publish_feedback(feedback)
                 rate.sleep()
         else:
-            feedback.message = "Current and Goal positions are same"
-            feedback.position = self.current_position
+            feedback.current_position = self.current_position
             self._as.publish_feedback(feedback)
         result = moveResult()
-        result.current_position = self.current_position
+        result.message = "Goal is reached"
+        result.position = self.current_position
         rospy.loginfo("Result has been sent from server to client")
         self._as.set_succeeded(result)
 

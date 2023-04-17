@@ -2,9 +2,9 @@
 float64 position
 float64 velocity
 ---
-#feedback
+#result
 float64 position
 string message
 ---
-#result
+#feedback
 float64 current_position
