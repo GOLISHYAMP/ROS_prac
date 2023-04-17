@@ -1,0 +1,10 @@
+#goal
+float64 position
+float64 velocity
+---
+#feedback
+float64 position
+string message
+---
+#result
+float64 current_position
