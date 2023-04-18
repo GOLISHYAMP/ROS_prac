@@ -14,7 +14,9 @@ class simple_move_client():
         rospy.loginfo("Action Server is up and ready to receive goals")
         
     def send_goal_and_get_results(self):
-        goal = moveGoal(position = 86, velocity = 5)
+        posi = rospy.get_param("/position")
+        velo = rospy.get_param("/velocity")
+        goal = moveGoal(position = posi, velocity = velo)
         self._ac.send_goal(goal,done_cb=self.done_callback,feedback_cb=self.feedback_callback)
         rospy.loginfo("Goal has been sent")
 

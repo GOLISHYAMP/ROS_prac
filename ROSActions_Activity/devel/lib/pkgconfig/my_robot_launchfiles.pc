@@ -1,0 +1,8 @@
+prefix=/home/shyam/ROS_practice/ROSActions_Activity/devel
+
+Name: my_robot_launchfiles
+Description: Description of my_robot_launchfiles
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,8 @@
+<launch>
+	<param name = "/position" type = "int" value = "65" />
+	<param name = "/velocity" type = "double" value = "3" />
+	
+   	<node name = "simple_move_server" pkg = "my_robot_tutorials" type = "simple_move_server.py" />
+    <!--<node name = "simple_move_client" pkg = "my_robot_tutorials" type = "simple_move_client.py" />
+	-->
+</launch>
