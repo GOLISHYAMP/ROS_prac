@@ -13,12 +13,15 @@ class simple_move_client():
         self._ac.wait_for_server()
         rospy.loginfo("Action Server is up and ready to receive goals")
         
+        
     def send_goal_and_get_results(self):
         posi = rospy.get_param("/position")
         velo = rospy.get_param("/velocity")
         goal = moveGoal(position = posi, velocity = velo)
         self._ac.send_goal(goal,done_cb=self.done_callback,feedback_cb=self.feedback_callback)
         rospy.loginfo("Goal has been sent")
+        rospy.sleep(10)
+        self._ac.cancel_goal()
 
     def done_callback(self,status,result):
         rospy.loginfo("Status is : "+str(status))
@@ -33,4 +36,4 @@ if __name__ == "__main__":
     rospy.loginfo("Simple move client has been started")
     smc = simple_move_client()
     smc.send_goal_and_get_results()
-    rospy.spin()
+    # rospy.spin()
