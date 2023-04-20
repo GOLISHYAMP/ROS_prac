@@ -15,6 +15,7 @@ class simple_move_client():
         
         
     def send_goal_and_get_results(self):
+        #getting position and velocity from the parammeter
         posi = rospy.get_param("/position")
         velo = rospy.get_param("/velocity")
         goal = moveGoal(position = posi, velocity = velo)
@@ -24,6 +25,7 @@ class simple_move_client():
         self._ac.cancel_goal()
 
     def done_callback(self,status,result):
+        #Executed on getting the results from the server
         rospy.loginfo("Status is : "+str(status))
         rospy.loginfo("Result message is : "+str(result.message))
         rospy.loginfo("position is : "+str(result.position))
