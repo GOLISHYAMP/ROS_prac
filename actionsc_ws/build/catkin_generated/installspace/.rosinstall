@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/shyam/ROS_practice/actionsc_ws/install/setup.sh

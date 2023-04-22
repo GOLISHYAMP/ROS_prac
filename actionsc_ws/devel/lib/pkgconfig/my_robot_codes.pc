@@ -1,0 +1,8 @@
+prefix=/home/shyam/ROS_practice/actionsc_ws/devel
+
+Name: my_robot_codes
+Description: Description of my_robot_codes
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
