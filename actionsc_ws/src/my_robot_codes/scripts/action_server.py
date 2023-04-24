@@ -2,6 +2,7 @@
 
 import rospy
 import actionlib
+import threading
 
 from my_robot_msgs.msg import CountUntilAction
 from my_robot_msgs.msg import CountUntilGoal
@@ -14,6 +15,7 @@ class CountUntilServer:
         self._as.start()
 
         rospy.loginfo("Action Server has been started!")
+        self._cancel_request = False
 
     def process_goal(self,goal_handle):
         rospy.loginfo("Processing goal")
@@ -33,14 +35,15 @@ class CountUntilServer:
         preempted = False
 
         while not rospy.is_shutdown():
-            counter += 1
-            rospy.loginfo("Counter : "+str(counter))
-            #if goal_handle.set_cancel_requested():
-             #   preempted = True
-              #  break
+            
+            if self._cancel_request:
+                preempted = True
+                break
             if counter >= max_number:
                 success = True
                 break
+            counter += 1
+            rospy.loginfo("Counter : "+str(counter))
             feedback = CountUntilFeedback()
             feedback.percentage = float(counter)/float(max_number)
             goal_handle.publish_feedback(feedback)
@@ -65,10 +68,12 @@ class CountUntilServer:
     def on_goal(self,goal_handle):
         rospy.loginfo("Received new goal")
         rospy.loginfo(goal_handle.get_goal())
-        self.process_goal(goal_handle)
+        w = threading.Thread(name="worker", target=self.process_goal,args = (goal_handle,))
+        w.start()
 
     def on_cancel(self,goal_handle):
         rospy.loginfo("Requested for cancel received")
+        self._cancel_request = True
 
 if __name__ == "__main__":
     rospy.init_node("count_until_server")
