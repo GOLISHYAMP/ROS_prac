@@ -19,9 +19,48 @@ class CountUntilServer:
         rospy.loginfo("Processing goal")
         goal = goal_handle.get_goal()
         max_number = goal.max_number
-        max_duration = goal.max_duration
-        rospy.sleep(1)
-        goal_handle.set_succeeded()
+        wait_duration = goal.wait_duration
+
+        if max_number>10:
+            goal_handle.set_rejected()
+            return
+        goal_handle.set_accepted()
+
+        counter = 0
+        rate = rospy.Rate(1.0/wait_duration)
+
+        success = False
+        preempted = False
+
+        while not rospy.is_shutdown():
+            counter += 1
+            rospy.loginfo("Counter : "+str(counter))
+            #if goal_handle.set_cancel_requested():
+             #   preempted = True
+              #  break
+            if counter >= max_number:
+                success = True
+                break
+            feedback = CountUntilFeedback()
+            feedback.percentage = float(counter)/float(max_number)
+            goal_handle.publish_feedback(feedback)
+            rate.sleep()
+
+        result = CountUntilResult()
+        result.count = counter
+        rospy.loginfo("send goal result to client")
+
+        if preempted:
+            rospy.loginfo("Preempted")
+            goal_handle.set_canceled(result)
+        elif success:
+            rospy.loginfo("Succeeded")
+            goal_handle.set_succeeded(result)
+        else:
+            rospy.loginfo("Aborted")
+            goal_handle.set_aborted(result)
+        rospy.loginfo("Finished the processing of the goal")
+            
 
     def on_goal(self,goal_handle):
         rospy.loginfo("Received new goal")
