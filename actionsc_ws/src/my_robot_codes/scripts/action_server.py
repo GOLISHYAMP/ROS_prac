@@ -17,7 +17,7 @@ class CountUntilServer:
             auto_start=False)
         self._as.start()
         rospy.loginfo("Action Server has been started.")
-        self.cancel_goal = False
+        self._cancel_goals = {}
 
     def process_goal(self, goal_handle):
         goal_id = goal_handle.get_goal_id()
@@ -45,12 +45,13 @@ class CountUntilServer:
             if counter >= max_number:
                 success = True
                 break
-            counter += 1
-            rospy.loginfo(str(goal_id.id) + ":  " + str(counter))
+            
             feedback = CountUntilFeedback()
             feedback.percentage = \
                 float(counter) / float(max_number)
             goal_handle.publish_feedback(feedback)
+            counter += 1
+            rospy.loginfo(str(goal_id.id) + ":  " + str(counter))
             rate.sleep()
 
         result = CountUntilResult()
@@ -74,6 +75,10 @@ class CountUntilServer:
         rospy.loginfo("Received new goal")
         rospy.loginfo(goal_handle.get_goal())
 
+        self._cancel_goals[goal_handle.get_goal_id()] = False
+        rospy.loginfo("List of goals")
+        rospy.loginfo(self._cancel_goals)
+        
         w = threading.Thread(name="worker", 
             target=self.process_goal, args=(goal_handle,))
         w.start()
@@ -81,8 +86,10 @@ class CountUntilServer:
     def on_cancel(self, goal_handle):
         rospy.loginfo("Received cancel request.")
         goal_id = goal_handle.get_goal_id()
-        self.cancel_goal = True
-        rospy.loginfo(str(goal_id)+" goal is cancelled")
+        
+        if goal_id in self._cancel_goals:
+            rospy.loginfo("Found goal to cancel")
+            self._cancel_goals[goal_id] = True
        
 
 
