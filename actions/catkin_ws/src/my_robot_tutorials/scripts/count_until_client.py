@@ -14,15 +14,12 @@ class CountUntilClient:
         rospy.loginfo("Action sever is up, we can send new goals!")
         
     def send_goal_and_get_result(self):
-        goal = CountUntilGoal(max_number = 10, wait_duration = 0.5)
+        goal = CountUntilGoal(max_number = 15, wait_duration = 0.5)
         self._ac.send_goal(goal,done_cb = self.done_callback, feedback_cb = self.feedback_callback)
         rospy.loginfo("Goal has been sent")
         #self._ac.wait_for_result()
         #rospy.loginfo(self._ac.get_result())
-        count = 0
-        while not (count == 10):
-            print(count)
-            count += 1
+        
 
         rospy.sleep(3)
         self._ac.cancel_goal()

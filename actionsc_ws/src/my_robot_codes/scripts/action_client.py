@@ -25,7 +25,8 @@ class CountUntilClient:
         # rospy.loginfo(str(index) + " --- Transition callback")
         #rospy.loginfo(goal_handle.get_comm_state())
         #rospy.loginfo(goal_handle.get_goal_status())
-
+        rospy.loginfo("came to on_transition")
+        
         if goal_handle.get_comm_state() == 2:
             rospy.loginfo(str(goal_handle.get_goal_id()) + ": Goal just went active.")
         if goal_handle.get_comm_state() == 7:
@@ -34,8 +35,8 @@ class CountUntilClient:
             rospy.loginfo(goal_handle.get_result())
 
     def on_feedback(self, goal_handle, feedback):
-        #rospy.loginfo("--- Feedback callback")
-        #rospy.loginfo(feedback)
+        rospy.loginfo("--- Feedback callback")
+        rospy.loginfo(feedback)
         pass
 
     def send_goal(self, max_number, wait_duration):
