@@ -54,10 +54,11 @@ if __name__ == '__main__':
 
     goal_handle1 = client.send_goal(15, 0.5)
     client._goal_handles["1"] = goal_handle1
+    rospy.sleep(2)
     goal_handle2 = client.send_goal(12, 0.8)
     client._goal_handles["2"] = goal_handle2
 
-    rospy.sleep(3.0)
-    goal_handle1.cancel()
+    # rospy.sleep(3.0)
+    # goal_handle1.cancel()
 
     rospy.spin()

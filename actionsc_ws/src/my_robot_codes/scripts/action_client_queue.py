@@ -18,6 +18,20 @@ class CountUntilServer:
         self._as.start()
         rospy.loginfo("Action Server has been started.")
         self._cancel_goals = {}
+        self._goal_queue = []
+        
+        w = threading.Thread(name="worker", target=self.run_queue)
+        rospy.loginfo("Run Queue has been started")
+
+    def run_queue(self):
+        rate = rospy.Rate(2)
+        while not rospy.is_shutdown():
+            rate.sleep()
+            if len(self._goal_queue) > 0:
+                self.process_goal(self._goal_queue.pop(0))
+            else:
+                rospy.loginfo("nothing to do")
+                
 
     def process_goal(self, goal_handle):
         goal_id = goal_handle.get_goal_id()
@@ -77,22 +91,10 @@ class CountUntilServer:
         rospy.loginfo("Received new goal")
         rospy.loginfo(goal_handle.get_goal())
 
-        if len(self._cancel_goals) != 0:
-            rospy.loginfo("A goal already exists! Reject new goal")
-            result = CountUntilResult()
-            result.count = -1000
-            goal_handle.set_rejected(result)
-            return
-            
-
+        self._goal_queue.append(goal_handle)
         goal_id = goal_handle.get_goal_id()
         self._cancel_goals[goal_id.id] = False
-        rospy.loginfo("List of goals")
-        rospy.loginfo(self._cancel_goals)
         
-        w = threading.Thread(name="worker", 
-            target=self.process_goal, args=(goal_handle,))
-        w.start()
     
     def on_cancel(self, goal_handle):
         rospy.loginfo("Received cancel request.")
