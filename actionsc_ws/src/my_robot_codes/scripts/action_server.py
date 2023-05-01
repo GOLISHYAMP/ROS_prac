@@ -39,7 +39,10 @@ class CountUntilServer:
         preempted = False
 
         while not rospy.is_shutdown():
-            if self.cancel_goal:
+            counter += 1
+            rospy.loginfo(str(goal_id.id)+" : "+str(counter))
+            
+            if self._cancel_goals[goal_id.id]:
                 preempted = True
                 break
             if counter >= max_number:
@@ -50,8 +53,6 @@ class CountUntilServer:
             feedback.percentage = \
                 float(counter) / float(max_number)
             goal_handle.publish_feedback(feedback)
-            counter += 1
-            rospy.loginfo(str(goal_id.id) + ":  " + str(counter))
             rate.sleep()
 
         result = CountUntilResult()
@@ -69,13 +70,14 @@ class CountUntilServer:
             goal_handle.set_aborted(result)
         rospy.loginfo("--- Finished to process the goal : " + \
             str(goal_id.id))
+        self._cancel_goals.pop(goal_id.id)
         
 
     def on_goal(self, goal_handle):
         rospy.loginfo("Received new goal")
         rospy.loginfo(goal_handle.get_goal())
-
-        self._cancel_goals[goal_handle.get_goal_id()] = False
+        goal_id = goal_handle.get_goal_id()
+        self._cancel_goals[goal_id.id] = False
         rospy.loginfo("List of goals")
         rospy.loginfo(self._cancel_goals)
         
@@ -87,9 +89,9 @@ class CountUntilServer:
         rospy.loginfo("Received cancel request.")
         goal_id = goal_handle.get_goal_id()
         
-        if goal_id in self._cancel_goals:
+        if goal_id.id in self._cancel_goals:
             rospy.loginfo("Found goal to cancel")
-            self._cancel_goals[goal_id] = True
+            self._cancel_goals[goal_id.id] = True
        
 
 

@@ -15,18 +15,29 @@ class CountUntilClient:
         
         self._ac.wait_for_server()
         rospy.loginfo("Action server up, we can send goals.")
+        self._goal_handles = {}
 
     def on_transition(self, goal_handle):    
+        index = 0
+        for i in self._goal_handles:
+            if self._goal_handles[i] == goal_handle:
+                index = i
+                break
+
+        rospy.loginfo(str(index)+" ----- transition callback")
+
         if goal_handle.get_comm_state() == 2:
-            rospy.loginfo("Goal just went active.")
+            rospy.loginfo(str(index)+" : Goal just went active.")
         if goal_handle.get_comm_state() == 7:
-            rospy.loginfo("Goal is DONE")
+            rospy.loginfo(str(index)+" : Goal is DONE")
             rospy.loginfo(goal_handle.get_terminal_state())
             rospy.loginfo(goal_handle.get_result())
 
     def on_feedback(self, goal_handle, feedback):
-        rospy.loginfo("--- Feedback callback")
-        rospy.loginfo(feedback)
+        # goal_id = goal_handle.get_goal_id()
+        # rospy.loginfo("--- Feedback callback")
+        # rospy.loginfo(feedback)
+        pass
         
 
     def send_goal(self, max_number, wait_duration):
@@ -40,8 +51,12 @@ class CountUntilClient:
 if __name__ == '__main__':
     rospy.init_node('count_until_client')
     client = CountUntilClient()
+
     goal_handle1 = client.send_goal(15, 0.5)
+    client._goal_handles["1"] = goal_handle1
     goal_handle2 = client.send_goal(12, 0.8)
+    client._goal_handles["2"] = goal_handle2
+
     rospy.sleep(3.0)
     goal_handle1.cancel()
 
