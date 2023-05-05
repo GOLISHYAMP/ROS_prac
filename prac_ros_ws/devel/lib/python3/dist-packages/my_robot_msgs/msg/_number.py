@@ -8,12 +8,14 @@ import struct
 
 
 class number(genpy.Message):
-  _md5sum = "d41d8cd98f00b204e9800998ecf8427e"
+  _md5sum = "192d0f9e8b86b0e07038f7c0d2ecb6b9"
   _type = "my_robot_msgs/number"
   _has_header = False  # flag to mark the presence of a Header object
-  _full_text = """"""
-  __slots__ = []
-  _slot_types = []
+  _full_text = """int64 num
+string str
+"""
+  __slots__ = ['num','str']
+  _slot_types = ['int64','string']
 
   def __init__(self, *args, **kwds):
     """
@@ -23,7 +25,7 @@ class number(genpy.Message):
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       
+       num,str
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -31,6 +33,14 @@ class number(genpy.Message):
     """
     if args or kwds:
       super(number, self).__init__(*args, **kwds)
+      # message fields cannot be None, assign default values for those that are
+      if self.num is None:
+        self.num = 0
+      if self.str is None:
+        self.str = ''
+    else:
+      self.num = 0
+      self.str = ''
 
   def _get_types(self):
     """
@@ -44,7 +54,14 @@ class number(genpy.Message):
     :param buff: buffer, ``StringIO``
     """
     try:
-      pass
+      _x = self.num
+      buff.write(_get_struct_q().pack(_x))
+      _x = self.str
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -57,6 +74,18 @@ class number(genpy.Message):
       codecs.lookup_error("rosmsg").msg_type = self._type
     try:
       end = 0
+      start = end
+      end += 8
+      (self.num,) = _get_struct_q().unpack(str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.str = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.str = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -69,7 +98,14 @@ class number(genpy.Message):
     :param numpy: numpy python module
     """
     try:
-      pass
+      _x = self.num
+      buff.write(_get_struct_q().pack(_x))
+      _x = self.str
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -83,6 +119,18 @@ class number(genpy.Message):
       codecs.lookup_error("rosmsg").msg_type = self._type
     try:
       end = 0
+      start = end
+      end += 8
+      (self.num,) = _get_struct_q().unpack(str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.str = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.str = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -91,3 +139,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
+_struct_q = None
+def _get_struct_q():
+    global _struct_q
+    if _struct_q is None:
+        _struct_q = struct.Struct("<q")
+    return _struct_q
