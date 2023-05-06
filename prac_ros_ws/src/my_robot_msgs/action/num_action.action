@@ -1,0 +1,8 @@
+#goal
+int64 bin_num
+---
+#result
+string number
+---
+#feedback
+float64 percentage_done

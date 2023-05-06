@@ -46,6 +46,22 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/my_robot_msgs/action" TYPE FILE FILES "/home/shyam/ROS_practice/prac_ros_ws/src/my_robot_msgs/action/num_action.action")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/my_robot_msgs/msg" TYPE FILE FILES
+    "/home/shyam/ROS_practice/prac_ros_ws/devel/share/my_robot_msgs/msg/num_actionAction.msg"
+    "/home/shyam/ROS_practice/prac_ros_ws/devel/share/my_robot_msgs/msg/num_actionActionGoal.msg"
+    "/home/shyam/ROS_practice/prac_ros_ws/devel/share/my_robot_msgs/msg/num_actionActionResult.msg"
+    "/home/shyam/ROS_practice/prac_ros_ws/devel/share/my_robot_msgs/msg/num_actionActionFeedback.msg"
+    "/home/shyam/ROS_practice/prac_ros_ws/devel/share/my_robot_msgs/msg/num_actionGoal.msg"
+    "/home/shyam/ROS_practice/prac_ros_ws/devel/share/my_robot_msgs/msg/num_actionResult.msg"
+    "/home/shyam/ROS_practice/prac_ros_ws/devel/share/my_robot_msgs/msg/num_actionFeedback.msg"
+    )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/my_robot_msgs/cmake" TYPE FILE FILES "/home/shyam/ROS_practice/prac_ros_ws/build/my_robot_msgs/catkin_generated/installspace/my_robot_msgs-msg-paths.cmake")
 endif()
 

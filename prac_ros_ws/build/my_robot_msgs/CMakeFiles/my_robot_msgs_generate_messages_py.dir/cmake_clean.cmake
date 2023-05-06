@@ -1,5 +1,12 @@
 file(REMOVE_RECURSE
   "/home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg/__init__.py"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg/_num_actionAction.py"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg/_num_actionActionFeedback.py"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg/_num_actionActionGoal.py"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg/_num_actionActionResult.py"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg/_num_actionFeedback.py"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg/_num_actionGoal.py"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg/_num_actionResult.py"
   "/home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg/_number.py"
   "/home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/srv/__init__.py"
   "/home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/srv/_num_srv.py"
