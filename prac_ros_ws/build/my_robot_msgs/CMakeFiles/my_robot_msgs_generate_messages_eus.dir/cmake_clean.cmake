@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "/home/shyam/ROS_practice/prac_ros_ws/devel/share/roseus/ros/my_robot_msgs/manifest.l"
   "/home/shyam/ROS_practice/prac_ros_ws/devel/share/roseus/ros/my_robot_msgs/msg/number.l"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/roseus/ros/my_robot_msgs/srv/num_srv.l"
   "CMakeFiles/my_robot_msgs_generate_messages_eus"
 )
 

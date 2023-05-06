@@ -54,7 +54,9 @@ CMAKE_BINARY_DIR = /home/shyam/ROS_practice/prac_ros_ws/build
 include my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_py.dir/progress.make
 
 my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_py: /home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg/_number.py
+my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_py: /home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/srv/_num_srv.py
 my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_py: /home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg/__init__.py
+my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_py: /home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/srv/__init__.py
 
 
 /home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg/_number.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
@@ -62,14 +64,28 @@ my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_py: /home/shyam/ROS_pra
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/shyam/ROS_practice/prac_ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG my_robot_msgs/number"
 	cd /home/shyam/ROS_practice/prac_ros_ws/build/my_robot_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/shyam/ROS_practice/prac_ros_ws/src/my_robot_msgs/msg/number.msg -Imy_robot_msgs:/home/shyam/ROS_practice/prac_ros_ws/src/my_robot_msgs/msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p my_robot_msgs -o /home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg
 
+/home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/srv/_num_srv.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+/home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/srv/_num_srv.py: /home/shyam/ROS_practice/prac_ros_ws/src/my_robot_msgs/srv/num_srv.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/shyam/ROS_practice/prac_ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python code from SRV my_robot_msgs/num_srv"
+	cd /home/shyam/ROS_practice/prac_ros_ws/build/my_robot_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/shyam/ROS_practice/prac_ros_ws/src/my_robot_msgs/srv/num_srv.srv -Imy_robot_msgs:/home/shyam/ROS_practice/prac_ros_ws/src/my_robot_msgs/msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p my_robot_msgs -o /home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/srv
+
 /home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg/__init__.py: /home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg/_number.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/shyam/ROS_practice/prac_ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for my_robot_msgs"
+/home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg/__init__.py: /home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/srv/_num_srv.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/shyam/ROS_practice/prac_ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for my_robot_msgs"
 	cd /home/shyam/ROS_practice/prac_ros_ws/build/my_robot_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg --initpy
+
+/home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/srv/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/srv/__init__.py: /home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg/_number.py
+/home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/srv/__init__.py: /home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/srv/_num_srv.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/shyam/ROS_practice/prac_ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python srv __init__.py for my_robot_msgs"
+	cd /home/shyam/ROS_practice/prac_ros_ws/build/my_robot_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/srv --initpy
 
 my_robot_msgs_generate_messages_py: my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_py
 my_robot_msgs_generate_messages_py: /home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg/_number.py
+my_robot_msgs_generate_messages_py: /home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/srv/_num_srv.py
 my_robot_msgs_generate_messages_py: /home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/msg/__init__.py
+my_robot_msgs_generate_messages_py: /home/shyam/ROS_practice/prac_ros_ws/devel/lib/python3/dist-packages/my_robot_msgs/srv/__init__.py
 my_robot_msgs_generate_messages_py: my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_py.dir/build.make
 
 .PHONY : my_robot_msgs_generate_messages_py

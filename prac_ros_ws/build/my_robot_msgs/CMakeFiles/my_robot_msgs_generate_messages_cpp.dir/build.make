@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/shyam/ROS_practice/prac_ros_ws/build
 include my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_cpp.dir/progress.make
 
 my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_cpp: /home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs/number.h
+my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_cpp: /home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs/num_srv.h
 
 
 /home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs/number.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
@@ -62,8 +63,16 @@ my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_cpp: /home/shyam/ROS_pr
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/shyam/ROS_practice/prac_ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from my_robot_msgs/number.msg"
 	cd /home/shyam/ROS_practice/prac_ros_ws/src/my_robot_msgs && /home/shyam/ROS_practice/prac_ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/shyam/ROS_practice/prac_ros_ws/src/my_robot_msgs/msg/number.msg -Imy_robot_msgs:/home/shyam/ROS_practice/prac_ros_ws/src/my_robot_msgs/msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p my_robot_msgs -o /home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
 
+/home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs/num_srv.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs/num_srv.h: /home/shyam/ROS_practice/prac_ros_ws/src/my_robot_msgs/srv/num_srv.srv
+/home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs/num_srv.h: /opt/ros/noetic/share/gencpp/msg.h.template
+/home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs/num_srv.h: /opt/ros/noetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/shyam/ROS_practice/prac_ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from my_robot_msgs/num_srv.srv"
+	cd /home/shyam/ROS_practice/prac_ros_ws/src/my_robot_msgs && /home/shyam/ROS_practice/prac_ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/shyam/ROS_practice/prac_ros_ws/src/my_robot_msgs/srv/num_srv.srv -Imy_robot_msgs:/home/shyam/ROS_practice/prac_ros_ws/src/my_robot_msgs/msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p my_robot_msgs -o /home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
+
 my_robot_msgs_generate_messages_cpp: my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_cpp
 my_robot_msgs_generate_messages_cpp: /home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs/number.h
+my_robot_msgs_generate_messages_cpp: /home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs/num_srv.h
 my_robot_msgs_generate_messages_cpp: my_robot_msgs/CMakeFiles/my_robot_msgs_generate_messages_cpp.dir/build.make
 
 .PHONY : my_robot_msgs_generate_messages_cpp
