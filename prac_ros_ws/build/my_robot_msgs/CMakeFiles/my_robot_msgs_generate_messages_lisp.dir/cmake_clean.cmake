@@ -1,4 +1,11 @@
 file(REMOVE_RECURSE
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/common-lisp/ros/my_robot_msgs/msg/action_csAction.lisp"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/common-lisp/ros/my_robot_msgs/msg/action_csActionFeedback.lisp"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/common-lisp/ros/my_robot_msgs/msg/action_csActionGoal.lisp"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/common-lisp/ros/my_robot_msgs/msg/action_csActionResult.lisp"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/common-lisp/ros/my_robot_msgs/msg/action_csFeedback.lisp"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/common-lisp/ros/my_robot_msgs/msg/action_csGoal.lisp"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/common-lisp/ros/my_robot_msgs/msg/action_csResult.lisp"
   "/home/shyam/ROS_practice/prac_ros_ws/devel/share/common-lisp/ros/my_robot_msgs/msg/num_actionAction.lisp"
   "/home/shyam/ROS_practice/prac_ros_ws/devel/share/common-lisp/ros/my_robot_msgs/msg/num_actionActionFeedback.lisp"
   "/home/shyam/ROS_practice/prac_ros_ws/devel/share/common-lisp/ros/my_robot_msgs/msg/num_actionActionGoal.lisp"

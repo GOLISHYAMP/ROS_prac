@@ -1,5 +1,12 @@
 file(REMOVE_RECURSE
   "/home/shyam/ROS_practice/prac_ros_ws/devel/share/roseus/ros/my_robot_msgs/manifest.l"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/roseus/ros/my_robot_msgs/msg/action_csAction.l"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/roseus/ros/my_robot_msgs/msg/action_csActionFeedback.l"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/roseus/ros/my_robot_msgs/msg/action_csActionGoal.l"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/roseus/ros/my_robot_msgs/msg/action_csActionResult.l"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/roseus/ros/my_robot_msgs/msg/action_csFeedback.l"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/roseus/ros/my_robot_msgs/msg/action_csGoal.l"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/roseus/ros/my_robot_msgs/msg/action_csResult.l"
   "/home/shyam/ROS_practice/prac_ros_ws/devel/share/roseus/ros/my_robot_msgs/msg/num_actionAction.l"
   "/home/shyam/ROS_practice/prac_ros_ws/devel/share/roseus/ros/my_robot_msgs/msg/num_actionActionFeedback.l"
   "/home/shyam/ROS_practice/prac_ros_ws/devel/share/roseus/ros/my_robot_msgs/msg/num_actionActionGoal.l"

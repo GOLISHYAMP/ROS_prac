@@ -1,4 +1,11 @@
 file(REMOVE_RECURSE
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs/action_csAction.h"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs/action_csActionFeedback.h"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs/action_csActionGoal.h"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs/action_csActionResult.h"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs/action_csFeedback.h"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs/action_csGoal.h"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs/action_csResult.h"
   "/home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs/num_actionAction.h"
   "/home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs/num_actionActionFeedback.h"
   "/home/shyam/ROS_practice/prac_ros_ws/devel/include/my_robot_msgs/num_actionActionGoal.h"

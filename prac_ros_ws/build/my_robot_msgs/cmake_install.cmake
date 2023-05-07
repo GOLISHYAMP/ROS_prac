@@ -46,7 +46,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/my_robot_msgs/action" TYPE FILE FILES "/home/shyam/ROS_practice/prac_ros_ws/src/my_robot_msgs/action/num_action.action")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/my_robot_msgs/action" TYPE FILE FILES
+    "/home/shyam/ROS_practice/prac_ros_ws/src/my_robot_msgs/action/num_action.action"
+    "/home/shyam/ROS_practice/prac_ros_ws/src/my_robot_msgs/action/action_cs.action"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -58,6 +61,18 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/shyam/ROS_practice/prac_ros_ws/devel/share/my_robot_msgs/msg/num_actionGoal.msg"
     "/home/shyam/ROS_practice/prac_ros_ws/devel/share/my_robot_msgs/msg/num_actionResult.msg"
     "/home/shyam/ROS_practice/prac_ros_ws/devel/share/my_robot_msgs/msg/num_actionFeedback.msg"
+    )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/my_robot_msgs/msg" TYPE FILE FILES
+    "/home/shyam/ROS_practice/prac_ros_ws/devel/share/my_robot_msgs/msg/action_csAction.msg"
+    "/home/shyam/ROS_practice/prac_ros_ws/devel/share/my_robot_msgs/msg/action_csActionGoal.msg"
+    "/home/shyam/ROS_practice/prac_ros_ws/devel/share/my_robot_msgs/msg/action_csActionResult.msg"
+    "/home/shyam/ROS_practice/prac_ros_ws/devel/share/my_robot_msgs/msg/action_csActionFeedback.msg"
+    "/home/shyam/ROS_practice/prac_ros_ws/devel/share/my_robot_msgs/msg/action_csGoal.msg"
+    "/home/shyam/ROS_practice/prac_ros_ws/devel/share/my_robot_msgs/msg/action_csResult.msg"
+    "/home/shyam/ROS_practice/prac_ros_ws/devel/share/my_robot_msgs/msg/action_csFeedback.msg"
     )
 endif()
 

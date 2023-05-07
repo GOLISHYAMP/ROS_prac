@@ -1,0 +1,8 @@
+#goal
+int64 num
+---
+#result
+string str
+---
+#feedback
+float64 per                                   

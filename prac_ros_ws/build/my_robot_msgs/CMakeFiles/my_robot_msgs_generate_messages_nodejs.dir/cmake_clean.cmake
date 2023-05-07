@@ -1,4 +1,11 @@
 file(REMOVE_RECURSE
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/gennodejs/ros/my_robot_msgs/msg/action_csAction.js"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/gennodejs/ros/my_robot_msgs/msg/action_csActionFeedback.js"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/gennodejs/ros/my_robot_msgs/msg/action_csActionGoal.js"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/gennodejs/ros/my_robot_msgs/msg/action_csActionResult.js"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/gennodejs/ros/my_robot_msgs/msg/action_csFeedback.js"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/gennodejs/ros/my_robot_msgs/msg/action_csGoal.js"
+  "/home/shyam/ROS_practice/prac_ros_ws/devel/share/gennodejs/ros/my_robot_msgs/msg/action_csResult.js"
   "/home/shyam/ROS_practice/prac_ros_ws/devel/share/gennodejs/ros/my_robot_msgs/msg/num_actionAction.js"
   "/home/shyam/ROS_practice/prac_ros_ws/devel/share/gennodejs/ros/my_robot_msgs/msg/num_actionActionFeedback.js"
   "/home/shyam/ROS_practice/prac_ros_ws/devel/share/gennodejs/ros/my_robot_msgs/msg/num_actionActionGoal.js"
