@@ -1,0 +1,8 @@
+prefix=/home/shyam/ROS/ROS_prac/KT_lab/install
+
+Name: my_robot_scripts
+Description: Description of my_robot_scripts
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,4 @@
+int64 signal_number
+---
+string color
+string message
