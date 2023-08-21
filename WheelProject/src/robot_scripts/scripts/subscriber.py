@@ -26,21 +26,21 @@ class subscribe():
         elif msg.data == 2:
             self.moveBackward(speed)
         elif msg.data == 3:
-            self.moveRight(speed)
-        elif msg.data == 4:
             self.moveLeft(speed)
+        elif msg.data == 4:
+            self.moveRight(speed)
         elif msg.data == 5:
-            self.rotateACW(speed)
-        elif msg.data == 6:
             self.rotateCW(speed)
+        elif msg.data == 6:
+            self.rotateACW(speed)
         elif msg.data == 7:
-            self.upRight(speed)
-        elif msg.data == 8:
-            self.downRight(speed)
-        elif msg.data == 9:
             self.upLeft(speed)
-        elif msg.data == 10:
+        elif msg.data == 8:
+            self.upRight(speed)
+        elif msg.data == 9:
             self.downLeft(speed)
+        elif msg.data == 10:
+            self.downRight(speed)
         else:
             self.stop()
     
@@ -114,6 +114,14 @@ class subscribe():
         self.backLeft.setSpeed(0)
         self.backRight.setSpeed(-speed)
         print(f"Speeds of Wheels FL: {self.frontLeft.speed} FR: {self.frontRight.speed} BL: {self.backLeft.speed} BR: {self.backRight.speed}") 
+
+    def stop(self):
+        self.frontLeft.setSpeed(0)
+        self.frontRight.setSpeed(0)
+        self.backLeft.setSpeed(0)
+        self.backRight.setSpeed(0)
+        print(f"Speeds of Wheels FL: {self.frontLeft.speed} FR: {self.frontRight.speed} BL: {self.backLeft.speed} BR: {self.backRight.speed}") 
+
 
 if __name__ == "__main__":
     rospy.init_node("Subscriber_Node")
